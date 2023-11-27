@@ -1,0 +1,107 @@
+/*body{
+    background-color: bisque;
+}*/
+
+ul{
+    position:fixed;
+    top:0px;
+    list-style-type: none;
+    padding:0px;
+    width:100%;/*宽度拉满*/
+    margin:0px;
+    overflow:hidden;/*控制内容溢出，hidden:内容会被修剪并且其余内容不可见
+                    scroll：内容会被修剪，但是浏览器会显示滚动条  
+                    auto如果内容被修建，则浏览器会显示滚动条  
+                    visible：内容不会被修剪，溢出呈现在元素框之外*/
+    background-color: black;/*背景色放在.listzi的话只会把超链接那一块变成黑色*/
+}
+li{
+    float:left;
+}
+
+.listzi{
+    display:block;
+    padding:14px 16px;/*设置超链接之间 */
+    text-decoration: none;
+    font-weight: bolder;
+    color:white;
+}
+.listzi:hover{
+    background-color: rgb(53, 55, 56);
+}
+
+
+.box1{
+    background-color: grey;
+    color: aqua;
+    border: medium solid green;
+     
+}
+
+.box1 h1{
+    font-style: italic;
+    font-size: 32px;
+    text-decoration:underline;
+    letter-spacing: 1em;
+}
+
+.button1{
+    padding:10px 15px;
+    background-color:gold;
+}
+
+.button1:hover{
+    background-color: goldenrod;
+}
+
+.button1:active{
+    background-color: red;
+}
+
+.box2{
+    margin-left:100px;
+    margin-right:100px;
+    border:5px blue;
+    border-style: dotted;
+    padding:10px;
+    padding:rgb(136, 13, 13);
+
+}
+
+.p3{
+    background-color: aliceblue;
+    float:left;
+    padding:1px;
+    border:2px solid #000;
+    width:33.3%;
+    box-sizing:border-box;
+}
+
+#main{
+    border:5px solid #000;
+    border-right:0px;
+    background-color: azure;
+    width:70%;
+    float:left;
+    box-sizing:border-box;
+}
+#rside{
+    border:5px solid #000;
+    background-color: beige;
+    width:30%;
+    float:right;
+    box-sizing:border-box;
+}
+
+.container{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style:italic;
+    margin:auto;
+}
+
+#fubiao{
+    position:fixed;
+    border:5px solid #000;
+    left:1200px;
+    color: #000;;
+}
