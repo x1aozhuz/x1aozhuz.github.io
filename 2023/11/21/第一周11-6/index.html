@@ -18,13 +18,13 @@
       
       <link rel="shortcut icon" href="/favicon.ico" />
        
-<link rel="stylesheet" href="/dist/main.css">
+<link rel="stylesheet" href="../../../../dist/main.css">
 
       
-<link rel="stylesheet" href="/css/fonts/remixicon.css">
+<link rel="stylesheet" href="../../../../css/fonts/remixicon.css">
 
       
-<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="../../../../css/custom.css">
  
       <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
        
@@ -74,7 +74,7 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/11/21/%E7%AC%AC%E4%B8%80%E5%91%A811-6/" class="article-date">
+      <a href="" class="article-date">
   <time datetime="2023-11-21T10:07:19.000Z" itemprop="datePublished">2023-11-21</time>
 </a>   
 <div class="word_count">
@@ -106,25 +106,25 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="php绕过"><a href="#php绕过" class="headerlink" title="php绕过"></a>php绕过</h2><h4 id="1-攻防世界-simple-php"><a href="#1-攻防世界-simple-php" class="headerlink" title="1.攻防世界 simple_php"></a>1.攻防世界 simple_php</h4><p><img src="C:/Users/xiaoz/Desktop/学习周报/攻防spphp.png" alt="攻防spphp"></p>
+  <h2 id="php绕过"><a href="#php绕过" class="headerlink" title="php绕过"></a>php绕过</h2><h4 id="1-攻防世界-simple-php"><a href="#1-攻防世界-simple-php" class="headerlink" title="1.攻防世界 simple_php"></a>1.攻防世界 simple_php</h4><p><img src="/./%E7%AC%AC%E4%B8%80%E5%91%A811-6/%E6%94%BB%E9%98%B2spphp.png" alt="攻防spphp"></p>
 <p>第一个if：弱比较判断a与0，并且a的布尔值为true,弱比较先进性类型转换再进行比较     </p>
 <p>所以这里只要a的值不为0并且转换后为0就可以了。比如“0”。    </p>
 <p>看网站wp里有用’abc’的，又找到一个类型比较表<a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/types.comparisons.php">PHP: PHP 类型比较表 - Manual</a>，提到在php8.0.0之前’abc’转换之后是0，但是之后再与0弱比较就是false了。    </p>
 <p>第二，三个if：判断b是否是数字或者数字字符串，如果b不是而且b的值&gt;1234则给出flag的后半段    </p>
 <p>如果变量是：1(整数)  ，’1’（数字字符串） ,1.0（浮点数），is_numeric()会返回true,但是开头是字母，后面是数字的值会返回false，比如’a1’. 同时is_numeric()也会检查十六进制。对于空字符%00，无论是在前后都会被判断为非数值，而%20只有被放在后面才会被判断为非数值，所以可以构造b为12345%00,%0012345,12345%20    </p>
 <p>因为数字和字符混合转换为整数之后只保留数字（字符在数字的后面），所以还可以构造b&#x3D;12345abc     </p>
-<h4 id="2-NSSCTF-easy-md5"><a href="#2-NSSCTF-easy-md5" class="headerlink" title="2.NSSCTF easy_md5"></a>2.NSSCTF easy_md5</h4><p><img src="C:/Users/xiaoz/Desktop/学习周报/NSSezmd5.png" alt="NSSezmd5"></p>
+<h4 id="2-NSSCTF-easy-md5"><a href="#2-NSSCTF-easy-md5" class="headerlink" title="2.NSSCTF easy_md5"></a>2.NSSCTF easy_md5</h4><p><img src="/./%E7%AC%AC%E4%B8%80%E5%91%A811-6/NSSezmd5.png" alt="NSSezmd5"></p>
 <p>要求变量name不等于变量Password,并且两个变量的md5值相同。     </p>
 <p>用md5()函数时，如果变量是个数组会返回null,因为md5不能加密数组。  </p>
 <p>md5()函数还会将0e开头的数字转换成0，但是只能在弱比较下使用</p>
 <p>还可以通过md5碰撞找到md5值相同的值。    </p>
 <p>​     </p>
-<h4 id="3-极客大挑战2023"><a href="#3-极客大挑战2023" class="headerlink" title="3.极客大挑战2023"></a>3.极客大挑战2023</h4><p><img src="C:/Users/xiaoz/Desktop/学习周报/极客2023php.png" alt="极客2023php"></p>
+<h4 id="3-极客大挑战2023"><a href="#3-极客大挑战2023" class="headerlink" title="3.极客大挑战2023"></a>3.极客大挑战2023</h4><p><img src="/./%E7%AC%AC%E4%B8%80%E5%91%A811-6/%E6%9E%81%E5%AE%A22023php.png" alt="极客2023php"></p>
 <p>第一层绕过:用get传参syc，且syc强不等于Welcome to geek 2023。preg_match()函数中有i修正符，即不会区分大小写，可以构造syc&#x3D;welcome to geek 2023!    </p>
 <p>第二层绕过:数字和字符混合时转换只保留数字(字符串中不含有’e’’E’’.’’,’)。如果字符串中有’e’,运算时会被当做指数，比如’123e1gh’被转换为’1230’.要使lover&lt;2023而且’lover’+1&gt;2024，可以构造lover&#x3D;2e7，这样就是 2&lt;2023&amp;&amp;2e7+1&gt;2024   </p>
 <p>第三层绕过:用POST传参qw,yxx,用shal()函数比较array1,array2。shal()函数与md5()类似，变量为数组时会返回Null，所以可以让qw,yxx都为数组，构造qw[]&#x3D;1&amp;yxx[]&#x3D;1  </p>
 <p>第四层绕过:要用POST传参SYC_GEEK.2023。一个函数名由数字字母下划线组成，不能有’.’,但是GET和POST方法传进去的变量名会将‘ ’’+’’.’’[‘转换为’_’，而且‘[’替换之后，后面的字符不会替换。则可以POST![极客2023payload](C:\Users\xiaoz\Pictures\Screenshots\极客2023payload.png传参SYC[GEEK.2023  </p>
-<p><img src="C:/Users/xiaoz/Desktop/学习周报/极客2023payload.png" alt="极客2023payload"></p>
+<p><img src="/./%E7%AC%AC%E4%B8%80%E5%91%A811-6/%E6%9E%81%E5%AE%A22023payload.png" alt="极客2023payload"></p>
 <p>最后得到一串加密的flag,试了试base64解码失败，没有做出来。</p>
 <h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><h4 id="攻防世界-unserialize3"><a href="#攻防世界-unserialize3" class="headerlink" title="攻防世界 unserialize3"></a>攻防世界 unserialize3</h4><p>php中serialize()函数将一个对象转换成一个字符串，unserialize()将字符串还原成一个对象，利用范序列化攻击与php中的魔术方法高度相关。   </p>
 <p><strong>魔术方法</strong>是在PHP中声明的任何类中都可以使用的方法，他从来不会被直接调用，而是在某种情况下自动触发    </p>
@@ -140,7 +140,7 @@
 <p>__invoke() &#x2F;&#x2F;当脚本尝试将对象调用为函数时触发  </p>
 <p>__wakeup() &#x2F;&#x2F;在反序列化一个对象时被自动调用，允许开发者在对象从序列化格式还原为可用的 PHP 对象之前对其进行某些特殊处理。这个方法可以接受任意的参数，但在实际使用中，它通常不需要参数。  </p>
 <p>__sleep() &#x2F;&#x2F; 执行serialize()时，先会调用该方法；它可以用于清理对象，并返回一个包含对象中所有应被序列化的变量名称的数组。常用于提交未提交的数据，或类似的清理操作。</p>
-<p><img src="C:/Users/xiaoz/Desktop/学习周报/攻防unslz.png" alt="攻防unslz"></p>
+<p><img src="/./%E7%AC%AC%E4%B8%80%E5%91%A811-6/%E6%94%BB%E9%98%B2unslz.png" alt="攻防unslz"></p>
 <p>题目中创建了一个’xctf’类，里面有个值为‘111’的flag变量。public属性序列化后格式为：数据类型:属性名长度:“属性名”;数据类型:属性值长度:“属性值”，即  </p>
 <p>O:4:”xctf”:1:{s:4:”flag”;s:3:”111”},当属性个数值大于真实属性个数时会跳过__wakeup()执行。也就时把’1’改成任意比1大的值。绕过之后给定的属性依然能够被赋值，而且可以执行_destruct()</p>
 <h3 id="upload"><a href="#upload" class="headerlink" title="upload"></a>upload</h3><h5 id="1-NSSCTF-upload2-0"><a href="#1-NSSCTF-upload2-0" class="headerlink" title="1.NSSCTF upload2.0"></a>1.NSSCTF upload2.0</h5><p>upload的思路:在前端后端绕过检测，上传木马然后向木马传参，执行php命令，利用漏洞获取flag  </p>
@@ -148,19 +148,19 @@
 <p>注意:1.不要漏掉两端的<? ?>  </p>
 <p>2.一句话木马中的是php语句，所以不能漏掉’**;**‘。也可以不用eval(),比如可以写<?php phpinfo(); ?>来显示php信息  </p>
 <p>phpinfo()函数用来返回php的所有相关信息</p>
-<p><strong>题解：</strong> 进入页面，先尝试上传一句话木马，回显：php是不行滴。通过bp抓包，将Content-Type改成image&#x2F;png还是不行，再把文件名后缀改成.phtml<img src="C:/Users/xiaoz/Desktop/学习周报/upload2.0.png" alt="upload2.0"></p>
+<p><strong>题解：</strong> 进入页面，先尝试上传一句话木马，回显：php是不行滴。通过bp抓包，将Content-Type改成image&#x2F;png还是不行，再把文件名后缀改成.phtml<img src="/./%E7%AC%AC%E4%B8%80%E5%91%A811-6/upload2.0.png" alt="upload2.0"></p>
 <p>成功上传.  </p>
 <p>后缀绕过：当上传文件的.php后缀被过滤的时候，可以用.php7  .php5  .php4 . phptml  .pht  .htm  .html等后缀来绕过，前提是服务器配置中有允许这些后缀的文件执行。  </p>
 <p>上传成功后连接蚁剑找到flag  </p>
 <p><strong>其他常见的上传绕过：</strong>   </p>
 <p><strong>Content-Type绕过</strong>:当web服务器收到静态的资源文件请求时，依据请求文件的后缀名在服务器的MIME配置文件中找到对应的MIME Type，再根据MIME Type设置HTTP Response的Content-Type，然后浏览器根据Content-Type的值处理文件。在上传的时候可以用bp把Content-Type改成图片或者别的类型来绕过过滤。  </p>
 <p><strong>前端绕过</strong>:一般可以直接在浏览器中修改js文件，删掉验证部分的代码。  </p>
-<p><strong>.htacass绕过</strong>：.htaccess文件(或者”分布式配置文件”）,全称是Hypertext Access(超文本入口)。提供了针对目录改变配置的方法， 即，在一个特定的文档目录中放置一个包含一个或多个指令的文件， 以作用于此目录及其所有子目录。绕过方法：上传覆盖.htaccess文件，重写解析规则，将上传的带有脚本马的图片以脚本方式解析。<strong>与Apache服务器相关。</strong><img src="C:/Users/xiaoz/Desktop/学习周报/.htacass.png" alt="htacass"></p>
+<p><strong>.htacass绕过</strong>：.htaccess文件(或者”分布式配置文件”）,全称是Hypertext Access(超文本入口)。提供了针对目录改变配置的方法， 即，在一个特定的文档目录中放置一个包含一个或多个指令的文件， 以作用于此目录及其所有子目录。绕过方法：上传覆盖.htaccess文件，重写解析规则，将上传的带有脚本马的图片以脚本方式解析。<strong>与Apache服务器相关。</strong><img src="/./%E7%AC%AC%E4%B8%80%E5%91%A811-6/.htacass.png" alt="htacass"></p>
 <p>这段指令使当前目录下的”1.jpg”被解析成php文件执行<strong>。AddHandler php5-script .jpg</strong> ,这条指令也可以。上传后就可以再上传一个图片马来连接。 *** Addtype application&#x2F;x-httpd-php php3 phtml png jpg***</p>
 <h5 id="2-NSSCTF-upload3-0"><a href="#2-NSSCTF-upload3-0" class="headerlink" title="2.NSSCTF upload3.0"></a>2.NSSCTF upload3.0</h5><p>先上传一个.htaccess文件,然后传一个一句话木马，用bp把后缀改成.png,再用蚁剑连接。  </p>
 <h5 id="做题时候出现的问题："><a href="#做题时候出现的问题：" class="headerlink" title="做题时候出现的问题："></a>做题时候出现的问题：</h5><p>用蚁剑连接时设置的url地址要写全，&#x2F;upload&#x2F;xxxx要写上。路径写错报错会显示一串很长的代码。   </p>
 <p>一句话木马指令要没有问题，不要忘了在结尾加**’;’**,不然会连接不上。    </p>
-<p>上传.htaccess文件时的请求包如下<img src="C:/Users/xiaoz/Desktop/学习周报/.htaccess.png" alt="htaccess"></p>
+<p>上传.htaccess文件时的请求包如下<img src="/./%E7%AC%AC%E4%B8%80%E5%91%A811-6/.htaccess.png" alt="htaccess"></p>
 <p>.htaccess没有后缀，下面的红字部分是文件的内容，第一行是匹配的文件名，即上传的木马名（写修改后缀之后的），第二行是让文件被解析成php，第三行是结束。</p>
  
       <!-- reward -->
@@ -243,7 +243,7 @@
    
   <nav class="article-nav">
     
-      <a href="/2023/11/21/%E7%AC%AC%E4%BA%8C%E5%91%A811-13/" class="article-nav-link">
+      <a href="../%E7%AC%AC%E4%BA%8C%E5%91%A811-13/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
@@ -328,21 +328,21 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="x1aozhuz"></a>
+    <a href="../../../../index.html"><img src="/images/ayer-side.svg" alt="x1aozhuz"></a>
   </div>
   
   <ul class="nav nav-main">
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
+      <a class="nav-item-link" href="../../../../index.html">主页</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/archives">周报</a>
+      <a class="nav-item-link" href="../../../../archives">周报</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/categories">分类</a>
+      <a class="nav-item-link" href="../../../../categories">分类</a>
     </li>
     
   </ul>
@@ -356,7 +356,7 @@
       </a>
       
       
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+      <a class="nav-item-link" target="_blank" href="../../../../atom.xml" title="RSS Feed">
         <i class="ri-rss-line"></i>
       </a>
       
@@ -379,26 +379,26 @@
   <div class="reward-box">
     
     <div class="reward-item">
-      <img class="reward-img" src="/images/alipay.jpg">
+      <img class="reward-img" src="../../../../images/alipay.jpg">
       <span class="reward-type">支付宝</span>
     </div>
     
     
     <div class="reward-item">
-      <img class="reward-img" src="/images/wechat.jpg">
+      <img class="reward-img" src="../../../../images/wechat.jpg">
       <span class="reward-type">微信</span>
     </div>
     
   </div>
 </div>
     
-<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="../../../../js/jquery-3.6.0.min.js"></script>
  
-<script src="/js/lazyload.min.js"></script>
+<script src="../../../../js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
  
-<script src="/js/tocbot.min.js"></script>
+<script src="../../../../js/tocbot.min.js"></script>
 
 <script>
   tocbot.init({
@@ -421,7 +421,7 @@
 />
 <script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 
-<script src="/dist/main.js"></script>
+<script src="../../../../dist/main.js"></script>
 
 <!-- ImageViewer -->
  <!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -536,7 +536,7 @@
 
 <!-- busuanzi  -->
  
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+<script src="../../../../js/busuanzi-2.3.pure.min.js"></script>
  
 <!-- ClickLove -->
 
@@ -546,7 +546,7 @@
 
 <!-- CodeCopy -->
  
-<link rel="stylesheet" href="/css/clipboard.css">
+<link rel="stylesheet" href="../../../../css/clipboard.css">
  <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
 <script>
   function wait(callback, seconds) {

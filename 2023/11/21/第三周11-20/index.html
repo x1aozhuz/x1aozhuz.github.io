@@ -18,13 +18,13 @@
       
       <link rel="shortcut icon" href="/favicon.ico" />
        
-<link rel="stylesheet" href="/dist/main.css">
+<link rel="stylesheet" href="../../../../dist/main.css">
 
       
-<link rel="stylesheet" href="/css/fonts/remixicon.css">
+<link rel="stylesheet" href="../../../../css/fonts/remixicon.css">
 
       
-<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="../../../../css/custom.css">
  
       <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
        
@@ -74,7 +74,7 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2023/11/21/%E7%AC%AC%E4%B8%89%E5%91%A811-20/" class="article-date">
+      <a href="" class="article-date">
   <time datetime="2023-11-21T10:07:29.000Z" itemprop="datePublished">2023-11-21</time>
 </a>   
 <div class="word_count">
@@ -111,7 +111,7 @@
 <p>​          用命令php -S 192.168.112.131:8080开启php服务，然后在这个文件夹touch 1.php创建一个php文件，写入一句话木马，<?php @eval($_POST['123']);?>,然后用蚁剑连接，连接地址为<a target="_blank" rel="noopener" href="http://192.168.112.131:8080/1.php%E3%80%82">http://192.168.112.131:8080/1.php。</a></p>
 <p>​         中间遇到的问题：一个是php服务开启后以&#x2F;home&#x2F;xiaozhuz为根目录，所以蚁剑连接的时候用<a target="_blank" rel="noopener" href="http://192.168.112.131:8080/home/xiaozhuz/1.php%E4%BC%9A%E6%8A%A5%E9%94%99%E3%80%82%E8%BF%98%E6%9C%89%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%8A%8A%E7%BB%88%E7%AB%AF%E5%85%B3%E6%8E%89%E7%9A%84%E8%AF%9Dphp%E6%9C%8D%E5%8A%A1%E5%A5%BD%E5%83%8F%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD">http://192.168.112.131:8080/home/xiaozhuz/1.php会报错。还有一个问题，如果把终端关掉的话php服务好像会自动关闭</a>  </p>
 <p>​        分析流量发现每一次通过木马查看文件都会向192.168.112.255用POST方法发一个包。</p>
-<h4 id="搭建自己的主页"><a href="#搭建自己的主页" class="headerlink" title="搭建自己的主页"></a>搭建自己的主页</h4><p>问题:跟着网上的教程主页，在hexo d部署时出现了问题。一开始有ssh:connect to host github.com port 22:Connection  timed out报错，上网查后重新配了ssh密钥，又在.ssh文件夹里面写了config换了443端口，然后ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>成功了,但是还是不能部署，出现了ERROR:Repository not found报错</p>
+<h4 id="搭建自己的主页"><a href="#搭建自己的主页" class="headerlink" title="搭建自己的主页"></a>搭建自己的主页</h4><p>问题:跟着网上的教程主页，在hexo d部署时出现了问题。一开始有ssh:connect to host github.com port 22:Connection  timed out报错，上网查后重新配了ssh密钥，又在.ssh文件夹里面写了config换了443端口，然后ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;</a>成功了,但是还是不能部署，出现了ERROR:Repository not found报错</p>
 <p>config的内容:&#96;&#96;Host github.com<code>                                 </code>Hostname ssh.github.com<code>                                 </code>Port 443&#96;</p>
 <p>后来请教了学长，把仓库名后缀的github-io改成了github.io，和_config.yml一致。然后又出现了新的报错:  <code>ssh:Could not resolve hostname github: Name or service not known</code>  </p>
 <p><code>    fatal: Could not read from remote repository</code>照着学长给的教程<a target="_blank" rel="noopener" href="https://dsolc.com/blogs/7-ssh-could-not-resolve-hostname-github-error/">SSH: COULD NOT RESOLVE HOSTNAME. . . GITHUB ERROR - Diplomatic Solutions (dsolc.com)</a>又重新配了一遍ssh密钥，又初始化了一遍hexo,重新部署成功。(之前看了网上还有把ssh连接改成https连接的方法，把git@github改成了<a href="http://github.com，但是还是会报错。)主页:[Hexo">http://github.com，但是还是会报错。)主页:[Hexo</a> (x1aozhuz.github.io)](<a target="_blank" rel="noopener" href="https://x1aozhuz.github.io/">https://x1aozhuz.github.io/</a>)</p>
@@ -196,8 +196,17 @@
    
   <nav class="article-nav">
     
+      <a href="../../../12/01/%E7%AC%AC%E5%9B%9B%E5%91%A811-27/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            第四周11-27
+          
+        </div>
+      </a>
     
-      <a href="/2023/11/21/%E7%AC%AC%E4%BA%8C%E5%91%A811-13/" class="article-nav-link">
+    
+      <a href="../%E7%AC%AC%E4%BA%8C%E5%91%A811-13/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title">第二周11.13</div>
       </a>
@@ -277,21 +286,21 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="x1aozhuz"></a>
+    <a href="../../../../index.html"><img src="/images/ayer-side.svg" alt="x1aozhuz"></a>
   </div>
   
   <ul class="nav nav-main">
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
+      <a class="nav-item-link" href="../../../../index.html">主页</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/archives">周报</a>
+      <a class="nav-item-link" href="../../../../archives">周报</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="/categories">分类</a>
+      <a class="nav-item-link" href="../../../../categories">分类</a>
     </li>
     
   </ul>
@@ -305,7 +314,7 @@
       </a>
       
       
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+      <a class="nav-item-link" target="_blank" href="../../../../atom.xml" title="RSS Feed">
         <i class="ri-rss-line"></i>
       </a>
       
@@ -328,26 +337,26 @@
   <div class="reward-box">
     
     <div class="reward-item">
-      <img class="reward-img" src="/images/alipay.jpg">
+      <img class="reward-img" src="../../../../images/alipay.jpg">
       <span class="reward-type">支付宝</span>
     </div>
     
     
     <div class="reward-item">
-      <img class="reward-img" src="/images/wechat.jpg">
+      <img class="reward-img" src="../../../../images/wechat.jpg">
       <span class="reward-type">微信</span>
     </div>
     
   </div>
 </div>
     
-<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="../../../../js/jquery-3.6.0.min.js"></script>
  
-<script src="/js/lazyload.min.js"></script>
+<script src="../../../../js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
  
-<script src="/js/tocbot.min.js"></script>
+<script src="../../../../js/tocbot.min.js"></script>
 
 <script>
   tocbot.init({
@@ -370,7 +379,7 @@
 />
 <script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 
-<script src="/dist/main.js"></script>
+<script src="../../../../dist/main.js"></script>
 
 <!-- ImageViewer -->
  <!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -485,7 +494,7 @@
 
 <!-- busuanzi  -->
  
-<script src="/js/busuanzi-2.3.pure.min.js"></script>
+<script src="../../../../js/busuanzi-2.3.pure.min.js"></script>
  
 <!-- ClickLove -->
 
@@ -495,7 +504,7 @@
 
 <!-- CodeCopy -->
  
-<link rel="stylesheet" href="/css/clipboard.css">
+<link rel="stylesheet" href="../../../../css/clipboard.css">
  <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
 <script>
   function wait(callback, seconds) {

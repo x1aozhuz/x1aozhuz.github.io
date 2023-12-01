@@ -13,18 +13,18 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>text |  x1aozhuz</title>
+      <title>第四周11-27 |  x1aozhuz</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
        
-<link rel="stylesheet" href="../dist/main.css">
+<link rel="stylesheet" href="../../../../dist/main.css">
 
       
-<link rel="stylesheet" href="../css/fonts/remixicon.css">
+<link rel="stylesheet" href="../../../../css/fonts/remixicon.css">
 
       
-<link rel="stylesheet" href="../css/custom.css">
+<link rel="stylesheet" href="../../../../css/custom.css">
  
       <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
        
@@ -55,8 +55,8 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="page-"
-  class="article article-type-page"
+  id="post-第四周11-27"
+  class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -66,16 +66,135 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  text
+  第四周11-27
 </h1>
  
 
       
     </header>
-       
+     
+    <div class="article-meta">
+      <a href="" class="article-date">
+  <time datetime="2023-12-01T12:30:42.000Z" itemprop="datePublished">2023-12-01</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">4 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
-   
+  <h3 id="CSS笔记"><a href="#CSS笔记" class="headerlink" title="CSS笔记"></a>CSS笔记</h3><p>CSS规则由两个主要的部分构成:选择器，以及一条或多条声明，声明由一个属性和一个值组成</p>
+<p>h1(选择器)   {color:blue;font-size:12px}  </p>
+<h4 id="id选择器与class选择器"><a href="#id选择器与class选择器" class="headerlink" title="id选择器与class选择器"></a>id选择器与class选择器</h4><p>一条HTML：&lt;p class&#x3D;”paragraph” id&#x3D;”para1”&gt;Lorem&lt;&#x2F;p&gt;    </p>
+<p>id是唯一的,class可以多条共有。</p>
+<h5 id="id选择器-para1-color-blue"><a href="#id选择器-para1-color-blue" class="headerlink" title="id选择器:  #para1{color:blue}"></a>id选择器:  #para1{color:blue}</h5><h5 id="class选择器-paragraph-color-blue"><a href="#class选择器-paragraph-color-blue" class="headerlink" title="class选择器.paragraph{color:blue}"></a>class选择器.paragraph{color:blue}</h5><h4 id="三中添加CSS的方式"><a href="#三中添加CSS的方式" class="headerlink" title="三中添加CSS的方式"></a>三中添加CSS的方式</h4><ul>
+<li>CSS保存在.css文件中，在HTML里使用&lt;link&gt;引用（常用）</li>
+<li>不适用外部CSS文件，将CSS放在HTML&lt;style&gt;里  </li>
+<li>仅影响一个元素，在HTML元素的style属性中添加（建议不用）</li>
+</ul>
+<p>法3例：  </p>
+<p>单独对于标题修改颜色&lt;h1 style&#x3D;”color: red”&gt;Hello World&lt;h1&gt;  </p>
+<h4 id="为某一段文字设置style"><a href="#为某一段文字设置style" class="headerlink" title="为某一段文字设置style"></a>为某一段文字设置style</h4><p>用&lt;div class&#x3D;”box1”&gt;&lt;&#x2F;div&gt;将所选的head和paragraph放入，相当于给他们设置了一个class  </p>
+<p>在&lt;head&gt;中使用&lt;link rel&#x3D;”stylesheet” href&#x3D;”css文件的路径”&gt;来关联css文件，然后打开css文件，为box1设置style。(通过.box1 h1~~可以指定为标题设置)</p>
+<ul>
+<li>background-color设置背景颜色</li>
+<li>color：设置字体颜色</li>
+<li>width:设置宽度  </li>
+<li>margin-x设置边缘大小,x为left,top,bottom,right,可以单独设置，也可以四个同时设置，如:margin:25px 50px 75px 100px,分别设置上右下左。margin有三个值时是:上，左右，下  两个值是:上下，左右。margin值也可以为x%或者auto(依赖浏览器)</li>
+</ul>
+<h4 id="颜色color的设置"><a href="#颜色color的设置" class="headerlink" title="颜色color的设置"></a>颜色color的设置</h4><ul>
+<li>关键词:balck,red,blue  </li>
+<li>RGB:(255,255,0)</li>
+<li>RGBA:RGB加不透明度(255,255,0,0,5),A(0~1)</li>
+<li>十六进制:#ff0000</li>
+<li>HSL(A):hsl(0,100%,50%,0.5),色相，饱和度，明度</li>
+</ul>
+<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><p>font-family:”字体1”,”字体2” ,字形如果字体中含有空格，则需要用双引号框起来  </p>
+<p>font-size确定字体大小</p>
+<p>font-weight确定粗细  </p>
+<p>word-spacing设置词间距  </p>
+<p>letter-spacing设置字母间距</p>
+<p>line-height设置行间距</p>
+<p>font-style确定字形:</p>
+<ul>
+<li>normal:正常  </li>
+<li>italic:斜体  </li>
+<li>oblique:倾斜</li>
+</ul>
+<p>优先选择字体1,若浏览器不支持则字体2，可以有更多字体。</p>
+<h5 id="serif与sans-serif-monospace"><a href="#serif与sans-serif-monospace" class="headerlink" title="serif与sans-serif ,monospace"></a>serif与sans-serif ,monospace</h5><p>sans-serif边缘无装饰，serif有装饰,monospace让所有等宽字符具有相同的宽度  </p>
+<h4 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h4><ul>
+<li>margin外边框</li>
+<li>border内边框</li>
+<li>padding填充</li>
+</ul>
+<h5 id="padding填充"><a href="#padding填充" class="headerlink" title="padding填充"></a>padding填充</h5><p>设置文本与边框的距离，不能设置颜色</p>
+<h5 id="border内边框"><a href="#border内边框" class="headerlink" title="border内边框"></a>border内边框</h5><p>设置内边框的粗细，颜色与样式</p>
+<p>border:5px blue dotted; </p>
+<ul>
+<li>dotted：点线边框</li>
+<li>dashed：虚线边框</li>
+<li>solid:实线边框</li>
+<li>double：双边框，总宽度不变</li>
+<li>ridge:3D脊边框</li>
+<li>inset:3D嵌入边框</li>
+<li>outset:3D突出边框</li>
+<li>radius:圆角</li>
+</ul>
+<h5 id="margin外边框"><a href="#margin外边框" class="headerlink" title="margin外边框"></a>margin外边框</h5><p>设置整个盒子外方空白部分的大小</p>
+<h4 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h4><p>&lt;button class&#x3D;”button”&gt;button&lt;&#x2F;button&gt;在网页中创建一个按钮并指定类名  </p>
+<ul>
+<li>padding类似盒子模型设置文本距离四边的距离</li>
+<li>background-color</li>
+<li>.button:hover{}设置鼠标移到按钮上时呈现的状态</li>
+<li>.buuton:active{}点击时的状态</li>
+</ul>
+<h4 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h4><p>&lt;a href&#x3D;”路径”&gt;&lt;&#x2F;a&gt;将某个元素设置成超链接  </p>
+<ul>
+<li>color</li>
+<li>text-decoration(-line&#x2F;color&#x2F;style)文本修饰,如texr-decoration:underline wavy red红色波浪下划线。如果要设置点状线等样式，要先出现underline&#x2F;overline</li>
+<li>同样可以用hover和active</li>
+</ul>
+<h4 id="list-style属性"><a href="#list-style属性" class="headerlink" title="list-style属性"></a>list-style属性</h4><p>设置一个列表的属性</p>
+<ul>
+<li>list-style-type设置列表项标记的类型</li>
+<li>list-style-position设置在何处放置标记,有inside,outside</li>
+<li>list-style-image将标记替换成图像,接url(“图像路径”)</li>
+</ul>
+<h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><p>使用定位之前要先设置position属性，如position:fixed</p>
+<p>用top bottom left right定位</p>
+<ul>
+<li>static-静态定位</li>
+<li>relative-相对定位  随意改变位置而不影响其他元素的位置（按照原始位置移动）</li>
+<li>absolute-绝对定位 原始位置不保留，让元素可以在页面的任何位置</li>
+<li>fixed-固定定位 相对于浏览器窗口定位，即使滚动窗口也不会移动</li>
+<li>sticky</li>
+</ul>
+<p>测试的html文件: <a href="4thweek11-27%5Ccsstest.html">_post&#x2F;test</a></p>
+ 
       <!-- reward -->
       
       <div id="reword-out">
@@ -145,7 +264,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/text/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/12/01/%E7%AC%AC%E5%9B%9B%E5%91%A811-27/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -154,9 +273,28 @@
   </div>
 
    
+  <nav class="article-nav">
+    
+    
+      <a href="../../../11/21/%E7%AC%AC%E4%B8%89%E5%91%A811-20/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">第三周11.20</div>
+      </a>
+    
+  </nav>
+
   
    
   
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
 </article>
 
 </section>
@@ -218,21 +356,21 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="../index.html"><img src="/images/ayer-side.svg" alt="x1aozhuz"></a>
+    <a href="../../../../index.html"><img src="/images/ayer-side.svg" alt="x1aozhuz"></a>
   </div>
   
   <ul class="nav nav-main">
     
     <li class="nav-item">
-      <a class="nav-item-link" href="../index.html">主页</a>
+      <a class="nav-item-link" href="../../../../index.html">主页</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="../archives">周报</a>
+      <a class="nav-item-link" href="../../../../archives">周报</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" href="../categories">分类</a>
+      <a class="nav-item-link" href="../../../../categories">分类</a>
     </li>
     
   </ul>
@@ -246,7 +384,7 @@
       </a>
       
       
-      <a class="nav-item-link" target="_blank" href="../atom.xml" title="RSS Feed">
+      <a class="nav-item-link" target="_blank" href="../../../../atom.xml" title="RSS Feed">
         <i class="ri-rss-line"></i>
       </a>
       
@@ -269,24 +407,40 @@
   <div class="reward-box">
     
     <div class="reward-item">
-      <img class="reward-img" src="../images/alipay.jpg">
+      <img class="reward-img" src="../../../../images/alipay.jpg">
       <span class="reward-type">支付宝</span>
     </div>
     
     
     <div class="reward-item">
-      <img class="reward-img" src="../images/wechat.jpg">
+      <img class="reward-img" src="../../../../images/wechat.jpg">
       <span class="reward-type">微信</span>
     </div>
     
   </div>
 </div>
     
-<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../../../../js/jquery-3.6.0.min.js"></script>
  
-<script src="../js/lazyload.min.js"></script>
+<script src="../../../../js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="../../../../js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
@@ -295,7 +449,7 @@
 />
 <script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 
-<script src="../dist/main.js"></script>
+<script src="../../../../dist/main.js"></script>
 
 <!-- ImageViewer -->
  <!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -410,7 +564,7 @@
 
 <!-- busuanzi  -->
  
-<script src="../js/busuanzi-2.3.pure.min.js"></script>
+<script src="../../../../js/busuanzi-2.3.pure.min.js"></script>
  
 <!-- ClickLove -->
 
@@ -420,7 +574,7 @@
 
 <!-- CodeCopy -->
  
-<link rel="stylesheet" href="../css/clipboard.css">
+<link rel="stylesheet" href="../../../../css/clipboard.css">
  <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
 <script>
   function wait(callback, seconds) {
